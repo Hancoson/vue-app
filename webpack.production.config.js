@@ -14,7 +14,7 @@ var env = {
 
 var config = {
     entry: {
-        app: path.resolve(__dirname, './app/scripts/main.js'),
+        app: path.resolve(__dirname, './app/scripts/app.js'),
         //vendors: ['jquery', 'react']
     },
 

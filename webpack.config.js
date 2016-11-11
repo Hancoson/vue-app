@@ -6,7 +6,7 @@ var node_modules_dir = path.join(__dirname, 'node_modules');
 var config = {
     entry: {
         main: [
-            './app/scripts/main.js',
+            './app/scripts/app.js',
             'webpack-dev-server/client?http://localhost:8081', // WebpackDevServer host and port
             'webpack/hot/only-dev-server' // "only" prevents reload on syntax errors
         ]
