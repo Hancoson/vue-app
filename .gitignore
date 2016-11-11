@@ -1,0 +1,15 @@
+# Created by .gitignore support plugin (hsz.mobi)
+*.ico
+*.psd
+*.rar
+*.zip
+.idea
+.vscode
+.sass-cache
+*.log
+
+node_modules/
+dist/
+www/
+
+*.map
