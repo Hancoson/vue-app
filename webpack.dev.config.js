@@ -7,15 +7,17 @@ var ProvidePlugin    = require(node_modules_dir+"/webpack/lib/ProvidePlugin");
 var config = {
   entry : {
     main: [
-      './app/app.js',
+      './app/main.js',
       'webpack-dev-server/client?http://localhost:8081', // WebpackDevServer host and port
       'webpack/hot/only-dev-server' // "only" prevents reload on syntax errors
     ]
   },
   output: {
     path    : path.resolve(__dirname, './app'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+		sourceMapFilename: '[file].map'
   },
+	devtool: '#source-map',
 
   resolve: {
     extensions: ['', '.js','.vue','.json','.css'],

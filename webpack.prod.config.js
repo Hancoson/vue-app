@@ -1,6 +1,7 @@
 var path               = require('path');
 var webpack            = require('webpack');
 var WebpackStripLoader = require('strip-loader');
+var node_modules_dir = path.join(__dirname, 'node_modules');
 var CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChunkPlugin"); //将多个打包后的资源中的公共部分打包成单独的文件
 var ProvidePlugin      = require("./node_modules/webpack/lib/ProvidePlugin"); //
 var ExtractTextPlugin  = require("extract-text-webpack-plugin");//独立出css样式
@@ -14,7 +15,7 @@ var env = {
 
 var config = {
 	entry: {
-		app: path.resolve(__dirname, './app/app.js'),
+		app: path.resolve(__dirname, './app/main.js'),
 		//vendors: ['jquery', 'react']
 	},
 
