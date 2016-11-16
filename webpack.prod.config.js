@@ -26,7 +26,7 @@ var config = {
 	resolve: {
 		extensions: ['', '.js','.vue','.json','.css'],
 		alias: {
-			'vue$': node_modules_dir + "/vue/dist/vue.js"
+			'vue': node_modules_dir + "/vue/dist/vue.js"
 		}
 	},
 	module : {
@@ -80,8 +80,8 @@ var config = {
 			'process.env.NODE_ENV': JSON.stringify('production')
 		}),
 		new ProvidePlugin({
-			vue: "vue$",
-			Vue: "vue$"
+			vue: "vue",
+			Vue: "vue"
 		})
 	],
 
