@@ -10,6 +10,7 @@ body{
 .main{
   max-width: $m-max-width;
   position: relative;
+  margin: 0 auto;
 }
 section{
   @extend .border-box;
@@ -22,10 +23,17 @@ header{
   height: 85*$px;
   border-bottom:#f0f0f0 1px solid;
   color: #fff;
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 10;
   .logo{
-    width: 85*$px;
-    height:85*$px;
+    height:65*$px;
+    width: 160*$px;
     float: left;
+    background: url('http://daily.zhihu.com/img/Web_Logo.png') no-repeat;
+    background-size: contain;
+    margin-top: 15*$px;
   }
   ul{
     float: right;
@@ -34,12 +42,12 @@ header{
       @extend .border-box;
       float: left;
       margin-left: 40*$px;
-      font-size: 32*$px;
+      font-size: 26*$px;
       border-bottom: 6*$px #31b9ff solid;
       a{
         display: block;
         height: 80*$px;
-        line-height: 80*$px;
+        line-height: 90*$px;
         color: #fff;
       }
       &.active{

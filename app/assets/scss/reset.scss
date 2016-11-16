@@ -17,79 +17,86 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
 }
 
 * {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
+  font-family: sans-serif;
 }
 
-ol, ul,ul li {
-    list-style: none;
+ol, ul, ul li {
+  list-style: none;
 }
 
 blockquote, q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 input {
-    outline: 0;
+  outline: 0;
 }
 
 input, textarea, keygen, select, button {
-    font: inherit;
-    &:focus{
-        outline:none;
-    }
+  font: inherit;
+  &:focus {
+    outline: none;
+  }
 }
-button,a{
-    border: 0;
-    cursor: pointer;
+
+button, a {
+  border: 0;
+  cursor: pointer;
 }
-a,a:hover{
-    text-decoration: none;
+
+a, a:hover {
+  text-decoration: none;
 }
+
 .clearfix:before,
-.clearfix:after{
-    display: table;
-    content: " ";
-}
 .clearfix:after {
-    clear: both;
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
 }
 
 /* End hide from IE-mac */
 .no-scroll {
-    overflow: hidden;
-    position: relative;
+  overflow: hidden;
+  position: relative;
 }
-.fl{
-    float: left;
+
+.fl {
+  float: left;
 }
-.fr{
-    float: right;
+
+.fr {
+  float: right;
 }

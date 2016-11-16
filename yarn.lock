@@ -3714,6 +3714,10 @@ vue-loader@^7.3.0:
     postcss-selector-parser "^1.1.2"
     source-map "^0.5.3"
 
+vue-resource:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/vue-resource/download/vue-resource-1.0.3.tgz#8d52d0d8a9ed5f2ae704c68d530c84ceaf97be14"
+
 watchpack@^0.2.1:
   version "0.2.9"
   resolved "http://registry.npm.taobao.org/watchpack/download/watchpack-0.2.9.tgz#62eaa4ab5e5ba35fdfc018275626e3c0f5e3fb0b"

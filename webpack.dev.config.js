@@ -22,7 +22,7 @@ var config = {
   resolve: {
     extensions: ['', '.js','.vue','.json','.css'],
     alias: {
-      'vue$': node_modules_dir + "/vue/dist/vue.js"
+      'vue': node_modules_dir + "/vue/dist/vue.js"
     }
   },
   module : {
@@ -54,8 +54,8 @@ var config = {
 	},
   plugins: [
 		new ProvidePlugin({
-			vue: "vue$",
-			Vue: "vue$"
+			vue: "vue",
+			Vue: "vue"
 		})
   ]
 };
