@@ -1376,6 +1376,12 @@ faye-websocket@~0.11.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
+file-loader:
+  version "0.9.0"
+  resolved "http://registry.npm.taobao.org/file-loader/download/file-loader-0.9.0.tgz#1d2daddd424ce6d1b07cfe3f79731bed3617ab42"
+  dependencies:
+    loader-utils "~0.2.5"
+
 filename-regex@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/filename-regex/download/filename-regex-2.0.0.tgz#996e3e80479b98b9897f15a8a58b3d084e926775"
@@ -2035,7 +2041,7 @@ load-json-file@^1.0.0:
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
 
-loader-utils@^0.2.10, loader-utils@^0.2.11, loader-utils@^0.2.15, loader-utils@^0.2.16, loader-utils@^0.2.3, loader-utils@^0.2.5, loader-utils@^0.2.6, loader-utils@^0.2.7, loader-utils@~0.2.2, loader-utils@0.2.x:
+loader-utils@^0.2.10, loader-utils@^0.2.11, loader-utils@^0.2.15, loader-utils@^0.2.16, loader-utils@^0.2.3, loader-utils@^0.2.5, loader-utils@^0.2.6, loader-utils@^0.2.7, loader-utils@~0.2.2, loader-utils@~0.2.5, loader-utils@0.2.x:
   version "0.2.16"
   resolved "http://registry.npm.taobao.org/loader-utils/download/loader-utils-0.2.16.tgz#f08632066ed8282835dff88dfb52704765adee6d"
   dependencies:
@@ -3717,6 +3723,10 @@ vue-loader@^7.3.0:
 vue-resource:
   version "1.0.3"
   resolved "http://registry.npm.taobao.org/vue-resource/download/vue-resource-1.0.3.tgz#8d52d0d8a9ed5f2ae704c68d530c84ceaf97be14"
+
+vue-router:
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.0.2.tgz#1cdd469cc8a037f92fd711683ca23a11840a5006"
 
 watchpack@^0.2.1:
   version "0.2.9"

@@ -5,7 +5,14 @@
 */
 
 @import 'variables';
-
+.loading{
+  width: 100%;
+  text-align: center;
+  img{
+    margin-top: 1rem;
+    width: 50*$px;
+  }
+}
 .items{
   width: 100%;
   margin-top: 95*$px;

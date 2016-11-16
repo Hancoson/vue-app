@@ -1,5 +1,5 @@
 <template lang="html" xmlns:v-bind="http://www.w3.org/1999/xhtml">
-  <div>
+  <div v-if="isShow">
     <ul class="items">
       <li v-for="item in items">
         <a v-bind:href="url+item.id" target="_blank">
@@ -12,16 +12,20 @@
       </li>
     </ul>
   </div>
+  <div class="loading" v-else>
+    <img src="http://open.file.meizu.com/group1/M00/00/A2/CnQOjVgf5fOARdzoAAAG-2B8lnY438.gif" />
+  </div>
 
 </template>
 <script>
-  import Config from '../../constants/config'
+  import Config from '../../constants/config';
   const VueResource = require('vue-resource');
 
   Vue.use(VueResource);
   export default{
     data(){
       return {
+        isShow:false,
         items: '',
         time : '',
         url  : Config.URL_PREFIX
@@ -30,6 +34,7 @@
     created(){
       this.$http.jsonp(Config.YAHOO + Config.API + this.getDate() + Config.YAHOO_SUFFIX, {jsonp: 'callback'})
         .then((response)=> {
+          this.isShow=true;
           const data = response.body.query.results.json;
           console.log(data);
           this.items = data.stories;
