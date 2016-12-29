@@ -7,7 +7,7 @@ var ProvidePlugin    = require(node_modules_dir+"/webpack/lib/ProvidePlugin");
 var config = {
   entry : {
     main: [
-      './app/main.js',
+      './app/app.js',
       'webpack-dev-server/client?http://localhost:8081', // WebpackDevServer host and port
       'webpack/hot/only-dev-server' // "only" prevents reload on syntax errors
     ]

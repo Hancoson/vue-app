@@ -18,10 +18,6 @@
 
 </template>
 <script>
-  import Config from '../../constants/config';
-  const VueResource = require('vue-resource');
-
-  Vue.use(VueResource);
   export default{
     data(){
       return {
