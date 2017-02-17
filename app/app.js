@@ -5,7 +5,7 @@
  */
 
 import Vue from 'vue';
-import Router from 'vue-router';
+import VueRouter from 'vue-router';
 const VueResource = require('vue-resource');
 
 import Config from './constants/config';
@@ -13,24 +13,39 @@ import Config from './constants/config';
 import './assets/scss/main.scss';
 import ItemComponenter from './components/item/item.vue';
 
-const router = new Router();
+//const router = new VueRouter();
 
-Vue.use(Router);
+Vue.use(VueRouter);
 Vue.use(VueResource);
 window.Config=Config;
 console.log(Config)
-router.map({
-  '/contents':{
-    component:ItemComponenter
-  }
-  // '/article':{
-  //   component:article
-  // },
-  // '/index':{
-  //   component:index
-  // }
+// router.map({
+//   '/contents':{
+//     component:ItemComponenter
+//   }
+//   // '/article':{
+//   //   component:article
+//   // },
+//   // '/index':{
+//   //   component:index
+//   // }
+// });
+// router.redirect({
+//   '*':'/index'
+// });
+// router.start(app, 'app');
+
+var routes = [
+  { path: '/contents', component: ItemComponenter},
+  // { path: '/lists', component: require(viewPath + 'lists.vue')},
+  // { path: '/option', component: require(viewPath + 'option.vue')},
+  // { path: '/detail', component: require(viewPath + 'detail.vue')}
+];
+var router = new VueRouter({
+  routes: routes
 });
-router.redirect({
-  '*':'/index'
-});
-router.start(app, 'app');
+
+//init
+var app = new Vue({
+    router: router
+}).$mount('#vue-app');

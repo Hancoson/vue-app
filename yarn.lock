@@ -3725,8 +3725,8 @@ vue-resource:
   resolved "http://registry.npm.taobao.org/vue-resource/download/vue-resource-1.0.3.tgz#8d52d0d8a9ed5f2ae704c68d530c84ceaf97be14"
 
 vue-router:
-  version "2.0.2"
-  resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.0.2.tgz#1cdd469cc8a037f92fd711683ca23a11840a5006"
+  version "2.2.1"
+  resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.2.1.tgz#b027f9fac2cf13462725e843d6dc631b6aa077f6"
 
 watchpack@^0.2.1:
   version "0.2.9"
