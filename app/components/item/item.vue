@@ -7,7 +7,7 @@
             <h4>{{item.title}}</h4>
             <p>{{time}}</p>
           </div>
-          <img class="img" v-bind:src="item.images"/>
+          <img class="img" v-bind:src="item.images" />
         </a>
       </li>
     </ul>
@@ -18,44 +18,48 @@
 
 </template>
 <script>
-  export default{
-    data(){
+  export default {
+
+    data() {
       return {
-        isShow:false,
+        isShow: false,
         items: '',
-        time : '',
-        url  : Config.URL_PREFIX
+        time: '',
+        url: Config.URL_PREFIX
       }
     },
-    created(){
-      this.$http.jsonp(Config.YAHOO + Config.API + this.getDate() + Config.YAHOO_SUFFIX, {jsonp: 'callback'})
-        .then((response)=> {
-          this.isShow=true;
+    created() {
+      this.$http.jsonp(Config.YAHOO + Config.API + this.getDate() + Config.YAHOO_SUFFIX, { jsonp: 'callback' })
+        .then((response) => {
+          this.isShow = true;
           const data = response.body.query.results.json;
           console.log(data);
           this.items = data.stories;
-          this.time  = this.substring(data.date);
-        }, (err)=> {
+          this.time = this.substring(data.date);
+        }, (err) => {
           console.log(err)
         });
     },
     methods: {
-      getDate(){
-        let d   = new Date();
-        let str = d.getFullYear().toString() + (d.getMonth() + 1).toString() + d.getDate().toString();
+      getDate() {
+        let d = new Date();
+        let m = d.getMonth() + 1;
+        if (m < 10) {
+          m = '0' + m.toString()
+        }
+        let str = d.getFullYear().toString() + m + d.getDate().toString();
         return str
       },
-      substring(str){
-        let _y='',_m='',_d='';
-        _y=str.substring(0,4);
-        _m=str.substring(4,6);
-        _d=str.substring(6,8);
-        return (_y+'/'+_m+'/'+_d)
+      substring(str) {
+        let _y = '', _m = '', _d = '';
+        _y = str.substring(0, 4);
+        _m = str.substring(4, 6);
+        _d = str.substring(6, 8);
+        return (_y + '/' + _m + '/' + _d)
 
       }
     }
 
   }
-
 
 </script>
