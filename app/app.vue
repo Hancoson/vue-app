@@ -1,11 +1,5 @@
 <template>
-  <item-componenter/>
+  <div id="vue-app">
+    <router-view></router-view>
+  </div>
 </template>
-<script>
-  import ItemComponenter from './components/item/item.vue'
-  export default{
-    components: {
-      'item-componenter': ItemComponenter
-    }
-  }
-</script>

@@ -6,29 +6,20 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-const VueResource = require('vue-resource');
+import VueResource from 'vue-resource';
+
+import App from './app.vue';
 
 import Config from './constants/config';
+import router from './router';
 
 import './assets/scss/main.scss';
-import ItemComponenter from './components/item/item.vue';
-import Index from './components/index/index.vue';
 
-
-Vue.use(VueRouter);
 Vue.use(VueResource);
 window.Config=Config;
 
-const routes = [
-  { path: '/contents', component: ItemComponenter },
-  { path: '*', component: Index },
-  { path: '/', component: Index }
-]
-
-const router = new VueRouter({
-  routes
-})
 
 const app = new Vue({
-  router
+  router,
+  render: h => h(App)
 }).$mount('#vue-app')

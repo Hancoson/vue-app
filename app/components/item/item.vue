@@ -1,5 +1,5 @@
 <template lang="html" xmlns:v-bind="http://www.w3.org/1999/xhtml">
-  <div v-if="isShow">
+  <div class='' v-if="isShow">
     <ul class="items">
       <li v-for="item in items">
         <a v-bind:href="url+item.id" target="_blank">
@@ -15,9 +15,13 @@
   <div class="loading" v-else>
     <img src="http://open.file.meizu.com/group1/M00/00/A2/CnQOjVgf5fOARdzoAAAG-2B8lnY438.gif" />
   </div>
-
 </template>
 <script>
+  import Nav from '../nav/nav.vue';
+Vue.component('Nav', {
+  template: '<li>This is a todo</li>'
+})
+  console.log(Nav);
   export default {
 
     data() {
