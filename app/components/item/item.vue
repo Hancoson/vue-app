@@ -16,12 +16,8 @@
     <img src="http://open.file.meizu.com/group1/M00/00/A2/CnQOjVgf5fOARdzoAAAG-2B8lnY438.gif" />
   </div>
 </template>
+
 <script>
-  import Nav from '../nav/nav.vue';
-Vue.component('Nav', {
-  template: '<li>This is a todo</li>'
-})
-  console.log(Nav);
   export default {
 
     data() {

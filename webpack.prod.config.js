@@ -1,14 +1,14 @@
-var path               = require('path');
-var webpack            = require('webpack');
+var path = require('path');
+var webpack = require('webpack');
 var WebpackStripLoader = require('strip-loader');
 var node_modules_dir = path.join(__dirname, 'node_modules');
 var CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChunkPlugin"); //将多个打包后的资源中的公共部分打包成单独的文件
-var ProvidePlugin      = require("./node_modules/webpack/lib/ProvidePlugin"); //
-var ExtractTextPlugin  = require("extract-text-webpack-plugin");//独立出css样式
-var HtmlWebpackPlugin  = require('html-webpack-plugin');//自动生成 HTML 文件
+var ProvidePlugin = require("./node_modules/webpack/lib/ProvidePlugin"); //
+var ExtractTextPlugin = require("extract-text-webpack-plugin");//独立出css样式
+var HtmlWebpackPlugin = require('html-webpack-plugin');//自动生成 HTML 文件
 
 var env = {
-	'_js' : 'js/',
+	'_js': 'js/',
 	'_css': 'css/',
 	'_img': 'images/'
 }
@@ -19,45 +19,50 @@ var config = {
 		//vendors: ['jquery', 'react']
 	},
 
-	output : {
-		path    : path.resolve(__dirname, './dist'),
+	output: {
+		path: path.resolve(__dirname, './dist'),
 		filename: env._js + 'bundle.js'
 	},
 	resolve: {
-		extensions: ['', '.js','.vue','.json','.css'],
+		extensions: ['', '.js', '.vue', '.json', '.css'],
 		alias: {
 			'vue': node_modules_dir + "/vue/dist/vue.js"
 		}
 	},
-	module : {
+	module: {
 		loaders: [
 			{
-				test   : /\.vue$/,
+				test: /\.vue$/,
 				exclude: /node_modules/,
-				loader : 'vue-loader'
+				loader: 'vue-loader'
 			},
 			{
-				test   : /\.js$/,
+				test: /\.js$/,
 				exclude: /node_modules/,
-				loaders: ['babel?' + JSON.stringify({presets: ['es2015']})]
+				loaders: ['babel?' + JSON.stringify({ presets: ['es2015'] })]
 			},
 			{
-				test  : /\.scss$/,
+				test: /\.scss$/,
 				loader: ExtractTextPlugin.extract(['css', 'sass'])
 			}, {
-				test  : /\.(png|jpg|gif)$/,
+				test: /\.(png|jpg|gif)$/,
 				loader: 'url-loader?limit=8192'
 			},
 			{
-				test   : [/\.js$/, /\.es6$/],
+				test: [/\.js$/, /\.es6$/],
 				exclude: /node_modules/,
-				loader : WebpackStripLoader.loader('console.log')
+				loader: WebpackStripLoader.loader('console.log')
 			}
 		]
 	},
 	plugins: [
 		//这个使用uglifyJs压缩你的js代码
-		new webpack.optimize.UglifyJsPlugin({minimize: true}),
+		new webpack.optimize.UglifyJsPlugin({
+			minimize: true,
+			compress: {
+				warnings: false,
+			},
+		}),
 		//把入口文件里面的数组打包成verdors.js
 		//new webpack.optimize.CommonsChunkPlugin('vendors', env._js + 'vendors.js'),
 
@@ -70,10 +75,10 @@ var config = {
 
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
-			inject  : 'body',
+			inject: 'body',
 			template: './index.html', // Load a custom template
-			hash    : true,
-			cache   : true
+			hash: true,
+			cache: true
 
 		}),
 		new webpack.DefinePlugin({
@@ -83,9 +88,7 @@ var config = {
 			vue: "vue",
 			Vue: "vue"
 		})
-	],
-
-	//noParse: [pathToJquery]  //需要确定该模块没有新的依赖，webpack 将不再扫描这个文件中的依赖。
+	]
 };
 
 module.exports = config;
