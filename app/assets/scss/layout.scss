@@ -30,6 +30,7 @@ header{
   .logo{
     height:65*$px;
     width: 160*$px;
+    margin-left: 20*$px;
     float: left;
     background: url('http://daily.zhihu.com/img/Web_Logo.png') no-repeat;
     background-size: contain;
@@ -60,7 +61,7 @@ header{
 .index-w{
   font-size: 36*$px;
   text-align: center;
-  padding: 20% 0;
+  padding: 20% 0 !important;
   a{
     color: #31b9ff
   }
@@ -74,5 +75,10 @@ footer{
   font-size: 24*$px;
   background: #fff;
   border-top:#f0f0f0 1px solid;
+}
+
+.wrapper{
+  width: 100%;
+  padding-top:85*$px
 }
 

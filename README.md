@@ -1,6 +1,6 @@
 # Vue app
 
-*A app buile vue with vue-resource、vue-router、 es6、webpack*
+*A app buile vue2.0 with vue-resource、vue-router、 es6、webpack*
 
 `Vue app` is a Zhihu-daily-byVuejs.
 
