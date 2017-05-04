@@ -18,7 +18,6 @@ import './assets/scss/main.scss';
 Vue.use(VueResource);
 window.Config=Config;
 
-
 const app = new Vue({
   router,
   render: h => h(App)
