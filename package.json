@@ -1,7 +1,7 @@
 {
   "name": "node-server",
   "scripts": {
-    "start": "webpack-dev-server --hot --port 8081 --progress --colors --inline --content-base ./app --config ./webpack.dev.config.js",
+    "start": "webpack-dev-server --hot --port 8082 --progress --colors --inline --content-base ./app --config ./webpack.dev.config.js",
     "build": "webpack --config webpack.prod.config.js"
   },
   "description": "A vue app",

@@ -6,9 +6,9 @@
   </div>
 </template>
 <script>
-  import HeadComponenter from './components/head/head.vue';
+  //import HeadComponenter from './components/common/nav.vue';
   import ItemComponenter from './components/item/item.vue';
-  import FootComponenter from './components/foot/foot.vue';
+  //import FootComponenter from './components/foot/foot.vue';
   export default{
     data(){
       return {
@@ -16,9 +16,9 @@
       }
     },
     components: {
-      'head-componenter': HeadComponenter,
+      //'head-componenter': HeadComponenter,
       'item-componenter': ItemComponenter,
-      'foot-componenter': FootComponenter
+      //'foot-componenter': FootComponenter
     }
   }
 </script>
