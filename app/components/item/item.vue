@@ -18,48 +18,57 @@
 </template>
 
 <script>
-  export default {
-
-    data() {
-      return {
-        isShow: false,
-        items: '',
-        time: '',
-        url: Config.URL_PREFIX
-      }
-    },
-    created() {
-      this.$http.jsonp(Config.YAHOO + Config.API + this.getDate() + Config.YAHOO_SUFFIX, { jsonp: 'callback' })
-        .then((response) => {
+//import axios from "axios";
+import jsonp from "jsonp";
+import { GET_ITEM } from "./../../store/mutation-types";
+export default {
+  data() {
+    return {
+      isShow: false,
+      items: "",
+      time: "",
+      url: Config.URL_PREFIX
+    };
+  },
+  created() {
+    this.$store.dispatch("getData");
+    console.log(this.$store);
+    jsonp(
+      Config.YAHOO + Config.API + this.getDate() + Config.YAHOO_SUFFIX,
+      null,
+      (err, response) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(response);
           this.isShow = true;
-          const data = response.body.query.results.json;
+          const data = response.query.results.json;
           console.log(data);
           this.items = data.stories;
           this.time = this.substring(data.date);
-        }, (err) => {
-          console.log(err)
-        });
-    },
-    methods: {
-      getDate() {
-        let d = new Date();
-        let m = d.getMonth() + 1;
-        if (m < 10) {
-          m = '0' + m.toString()
         }
-        let str = d.getFullYear().toString() + m + d.getDate().toString();
-        return str
-      },
-      substring(str) {
-        let _y = '', _m = '', _d = '';
-        _y = str.substring(0, 4);
-        _m = str.substring(4, 6);
-        _d = str.substring(6, 8);
-        return (_y + '/' + _m + '/' + _d)
-
       }
+    );
+  },
+  methods: {
+    getDate() {
+      let d = new Date();
+      let m = d.getMonth() + 1;
+      if (m < 10) {
+        m = "0" + m.toString();
+      }
+      let str = d.getFullYear().toString() + m + d.getDate().toString();
+      return str;
+    },
+    substring(str) {
+      let _y = "",
+        _m = "",
+        _d = "";
+      _y = str.substring(0, 4);
+      _m = str.substring(4, 6);
+      _d = str.substring(6, 8);
+      return _y + "/" + _m + "/" + _d;
     }
-
   }
-
+};
 </script>

@@ -6,8 +6,8 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VueResource from 'vue-resource';
 
+import store from './store/index'
 import App from './app.vue';
 
 import Config from './constants/config';
@@ -15,10 +15,10 @@ import router from './router';
 
 import './assets/scss/main.scss';
 
-Vue.use(VueResource);
-window.Config=Config;
+window.Config = Config;
 
 const app = new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#vue-app')

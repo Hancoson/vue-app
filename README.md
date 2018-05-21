@@ -1,6 +1,6 @@
 # Vue app
 
-*A app buile vue2.0 with vue-resource、vue-router、 es6、webpack*
+*A app buile vue2.x with vuex、axios、vue-router、 es6、webpack*
 
 `Vue app` is a Zhihu-daily-byVuejs.
 
@@ -13,11 +13,9 @@
 ### 2. build
 
 * Dev Environment
-  > `npm start` 
-  > [http://localhost:8081](http://localhost:8081)
+  > `npm start`
+  > [http://localhost:8082](http://localhost:8082)
 
 
 * Release Environment
-  > `npm run build` 
-
-
+  > `npm run build`
