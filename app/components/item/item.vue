@@ -18,9 +18,10 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 //import axios from "axios";
 import jsonp from "jsonp";
-import { GET_ITEM } from "./../../store/mutation-types";
+import { GET_ITEM } from "./../../store/mutation-types.js";
 export default {
   data() {
     return {
@@ -31,44 +32,12 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch("getData");
-    console.log(this.$store);
-    jsonp(
-      Config.YAHOO + Config.API + this.getDate() + Config.YAHOO_SUFFIX,
-      null,
-      (err, response) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(response);
-          this.isShow = true;
-          const data = response.query.results.json;
-          console.log(data);
-          this.items = data.stories;
-          this.time = this.substring(data.date);
-        }
-      }
-    );
-  },
-  methods: {
-    getDate() {
-      let d = new Date();
-      let m = d.getMonth() + 1;
-      if (m < 10) {
-        m = "0" + m.toString();
-      }
-      let str = d.getFullYear().toString() + m + d.getDate().toString();
-      return str;
-    },
-    substring(str) {
-      let _y = "",
-        _m = "",
-        _d = "";
-      _y = str.substring(0, 4);
-      _m = str.substring(4, 6);
-      _d = str.substring(6, 8);
-      return _y + "/" + _m + "/" + _d;
-    }
+    this.$store.dispatch("getItemData");
+    const itemDate = this.$store.state.item;
+    this.isShow = itemDate.isShow;
+    this.items = itemDate.items;
+    this.time = itemDate.times;
+    console.log(itemDate);
   }
 };
 </script>
