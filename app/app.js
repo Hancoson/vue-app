@@ -3,7 +3,7 @@
  * @author Guoxing.Han(hancoson#163.com)
  * @time 2016/11/21.
  */
-
+import 'es6-promise/auto'
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 

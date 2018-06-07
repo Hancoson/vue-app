@@ -1,8 +1,8 @@
 <template>
-  <item-componenter/>
+  <home-componenter/>
 </template>
 <script>
-import ItemComponenter from "./components/item/item.vue";
+import HomeComponenter from "./components/home/home.vue";
 export default {
   data() {
     return {
@@ -10,7 +10,7 @@ export default {
     };
   },
   components: {
-    "item-componenter": ItemComponenter
+    "home-componenter": HomeComponenter
   }
 };
 </script>

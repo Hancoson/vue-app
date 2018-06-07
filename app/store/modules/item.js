@@ -4,7 +4,7 @@
  * @version 0.0.1 
  */
 import jsonp from 'jsonp'
-import { GET_ITEM, SHOW_ITEM, GET_TIME } from './../mutation-types'
+import { GET_ITEM } from './../mutation-types'
 
 import * as utils from './../../utils/index'
 export default {
@@ -14,15 +14,11 @@ export default {
     times: ''
   },
   mutations: {
-    SHOW_ITEM(state, style) {
-      state.isShow = style
-    },
     GET_ITEM(state, data) {
-      state.items = data
-    },
-    GET_TIME(state, data) {
-      state.times = data
-    },
+      state.isShow = true
+      state.items = data.stories
+      state.times = data.date
+    }
   },
   actions: {
     getItemData({ commit, state }) {
@@ -33,10 +29,14 @@ export default {
           if (err) {
             console.log(err);
           } else {
-            commit("SHOW_ITEM", true)
-            const data = response.query.results.json;
-            commit('GET_ITEM', data.stories)
-            commit('GET_TIME', utils.substring(data.date))
+            if (response.query.results) {
+              const data = response.query.results.json;
+              commit("GET_ITEM", data)
+              console.log(data)
+            }
+            else {
+              console.log('数据异常！');
+            }
           }
         }
       );

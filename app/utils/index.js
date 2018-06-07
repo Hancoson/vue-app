@@ -6,10 +6,14 @@
 const getDate = () => {
   let d = new Date();
   let m = d.getMonth() + 1;
+  let dd = d.getDate();
   if (m < 10) {
     m = "0" + m.toString();
   }
-  let str = d.getFullYear().toString() + m + d.getDate().toString();
+  if (dd < 10) {
+    dd = "0" + dd.toString();
+  }
+  let str = d.getFullYear().toString() + m + dd;
   return str;
 }
 const substring = str => {

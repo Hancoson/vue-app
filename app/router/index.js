@@ -14,23 +14,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: resolve => require(['../components/home/home.vue'], resolve),
-      children: [
-        {
-          path: '/index',
-          component: resolve => require(['../components/index/index.vue'], resolve)
-        },
-        {
-          path: '/contents',
-          component: resolve => require(['../components/item/item.vue'], resolve)
-        },
-        {
-          path: '*',
-          component: resolve => require(['../components/index/index.vue'], resolve)
-        }
-      ]
+      component: resolve => require(['../components/index/index.vue'], resolve)
+    },
+    {
+      path: '/contents',
+      component: resolve => require(['../components/item/item.vue'], resolve)
+    },
+    {
+      path: '*',
+      component: resolve => require(['../components/index/index.vue'], resolve)
     }
-
 
   ]
 })

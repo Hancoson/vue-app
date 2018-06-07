@@ -1,5 +1,6 @@
 <template lang="html" xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <div class='' v-if="isShow">
+    
     <ul class="items">
       <li v-for="item in items">
         <a v-bind:href="url+item.id" target="_blank">
@@ -12,7 +13,7 @@
       </li>
     </ul>
   </div>
-  <div class="loading" v-else>
+  <div class="loading" v-else><div @click='getDates'>dfsdfsdf</div>
     <img src="http://open.file.meizu.com/group1/M00/00/A2/CnQOjVgf5fOARdzoAAAG-2B8lnY438.gif" />
   </div>
 </template>
@@ -26,18 +27,23 @@ export default {
   data() {
     return {
       isShow: false,
-      items: "",
+      items: [],
       time: "",
       url: Config.URL_PREFIX
     };
   },
-  created() {
-    this.$store.dispatch("getItemData");
-    const itemDate = this.$store.state.item;
-    this.isShow = itemDate.isShow;
-    this.items = itemDate.items;
-    this.time = itemDate.times;
-    console.log(itemDate);
+  mounted() {
+    this.getDates();
+  },
+  methods: {
+    getDates() {
+      this.$store.dispatch("getItemData");
+      const itemDate = this.$store.state.item;
+      this.isShow = itemDate.isShow;
+      this.items = itemDate.items;
+      this.time = itemDate.times;
+      console.log(itemDate);
+    }
   }
 };
 </script>

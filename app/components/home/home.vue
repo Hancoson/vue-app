@@ -6,10 +6,10 @@
 </template>
 
 <script>
-    import vNav from '../common/nav.vue';
-    export default {
-        components:{
-            vNav
-        }
-    }
+import vNav from "../common/nav.vue";
+export default {
+  components: {
+    vNav
+  }
+};
 </script>
