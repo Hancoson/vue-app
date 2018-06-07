@@ -3,32 +3,36 @@
 * @author Guoxing.Han(hancoson#163.com)
 * @time 2016/11/14.
 */
+
 @import 'variables';
-body{
+body {
   background: #f4f4f4;
 }
-.main{
+
+.main {
   max-width: $m-max-width;
   position: relative;
   margin: 0 auto;
 }
-section{
+
+section {
   @extend .border-box;
   padding: 0 18*$px;
   width: 100%;
 }
-header{
+
+header {
   background: #31b9ff;
   width: 100%;
   height: 85*$px;
-  border-bottom:#f0f0f0 1px solid;
+  border-bottom: #f0f0f0 1px solid;
   color: #fff;
   position: fixed;
   top: 0;
-  left:0;
+  left: 0;
   z-index: 10;
-  .logo{
-    height:65*$px;
+  .logo {
+    height: 65*$px;
     width: 160*$px;
     margin-left: 20*$px;
     float: left;
@@ -36,49 +40,52 @@ header{
     background-size: contain;
     margin-top: 15*$px;
   }
-  ul{
+  ul {
     float: right;
-    height: 80*$px;
-    li{
+    height: 85*$px;
+    padding-right: 30*$px;
+    overflow: hidden;
+    li {
       @extend .border-box;
       float: left;
+      height: 85*$px;
       margin-left: 40*$px;
       font-size: 26*$px;
       border-bottom: 6*$px #31b9ff solid;
-      a{
+      a {
         display: block;
-        height: 80*$px;
+        height: 85*$px;
         line-height: 90*$px;
         color: #fff;
-      }
-      &.active{
-        border-bottom: 6*$px #fff solid;
+        &.active {
+          height: 80*$px;
+          border-bottom: 5*$px #fff solid;
+        }
       }
     }
   }
 }
 
-.index-w{
+.index-w {
   font-size: 36*$px;
   text-align: center;
   padding: 20% 0 !important;
-  a{
+  a {
     color: #31b9ff
   }
 }
 
-footer{
+footer {
   width: 100%;
   text-align: center;
   padding: 24*$px 0;
   color: #999;
   font-size: 24*$px;
   background: #fff;
-  border-top:#f0f0f0 1px solid;
+  border-top: #f0f0f0 1px solid;
 }
 
-.wrapper{
+.wrapper {
   width: 100%;
-  padding-top:85*$px
+  padding-top: 85*$px
 }
-
