@@ -8,7 +8,7 @@ var config = {
   entry: {
     main: [
       './app/app.js',
-      'webpack-dev-server/client?http://localhost:8082', // WebpackDevServer host and port
+      'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
       'webpack/hot/only-dev-server' // "only" prevents reload on syntax errors
     ]
   },
@@ -28,27 +28,27 @@ var config = {
   module: {
     noParse: [],
     loaders: [{
-        test: /\.vue$/,
-        exclude: /node_modules/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ['babel?' + JSON.stringify({ presets: ['es2015'] })]
-      },
-      {
-        test: /\.css$/,
-        loader: 'style!css'
-      },
-      {
-        test: /\.scss$/,
-        loader: 'style!css!sass?sourceMap'
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        loader: 'url-loader?limit=8192'
-      }
+      test: /\.vue$/,
+      exclude: /node_modules/,
+      loader: 'vue-loader'
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loaders: ['babel?' + JSON.stringify({ presets: ['es2015'] })]
+    },
+    {
+      test: /\.css$/,
+      loader: 'style!css'
+    },
+    {
+      test: /\.scss$/,
+      loader: 'style!css!sass?sourceMap'
+    },
+    {
+      test: /\.(png|jpg|gif)$/,
+      loader: 'url-loader?limit=8192'
+    }
     ]
   },
   plugins: [
