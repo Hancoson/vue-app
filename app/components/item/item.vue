@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import jsonp from "jsonp";
 import * as utils from "./../../utils/index";
 import { GET_ITEM, HEADER_CHANGE } from "./../../store/mutation-types.js";
